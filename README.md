@@ -41,7 +41,7 @@ After training for 10,000 steps, we generated 100,000 tweets with a temperature 
 
 Normalized Top Words - Real vs. Generated Tweets:
 <br /> <br />
-<img src="https://github.com/Stenke/Tweets-to-Stories-to-Topics/blob/main/Visuals/word_freq_rvg2.png" width="1000" length="700"/>
+<img src="https://github.com/Stenke/Tweets-to-Stories-to-Topics/blob/main/Visuals/word_freq_rvg2.png" width="900" length="700"/>
 
 ## Validation
 Following EDA, we decided to use an adhoc classification method of validating performance. The idea is if the classifiers perform at or near 50%, our generated tweets are good replicas of the real things. For the classification modeling, we randomly sampled 15,000 tweets from the real and generated datasets for an entire set of 30,000. We tested both Naive Bayes and Random Forest Classifiers.<br /> <br />
@@ -51,7 +51,7 @@ We were pleased with a classification accuracy of 62.52% for the random forest c
 Random Forest Classifier: Feature Importance
 <br />
 
-<img src="https://github.com/Stenke/Tweets-to-Stories-to-Topics/blob/main/Visuals/rf-feature-import-plot.png" width="800" length="500"/>
+<img src="https://github.com/Stenke/Tweets-to-Stories-to-Topics/blob/main/Visuals/rf-feature-import-plot.png" width="700" length="300"/>
 <br /> <br />
 
 We then dove into a comparison of correctly versus misclassified data to understand the differences.<br /> <br />
