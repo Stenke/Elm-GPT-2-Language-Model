@@ -23,10 +23,12 @@ The following accounts were sourced to fine-tune our GPT-2 language model:
 6. Dalai Lama
 7. Pourmecoffee
 8. Steve Martin
-
+<br />
+Twitter Account Contributors:
+<br /> 
 <img src="https://github.com/Stenke/Tweets-to-Stories-to-Topics/blob/main/Visuals/account-names-tweet-count.png" width="700" length="500"/>
 
-
+<br />
 
 # Methods
 Elm is a languaged model based on the GPT-2 Simple library by Max Woolf. Before fine-tuning, Twitter data was cleaned, removing links, emojis, and hashtags. This data was then fed into GPT-2 Simple which has its own tokenizer for processing text data. The 355M paramater model was selected as we felt the improved performance as worth the longer training time. The model was trained using Google Colab's NVIDIA processor.<br /> <br />
