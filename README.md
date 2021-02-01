@@ -29,28 +29,19 @@ The following accounts were sourced to fine-tune our GPT-2 language model:
 
 
 # Methods
-Elm is a languaged model based on the GPT-2 Simple library by Max Woolf. 
- 
+Elm is a languaged model based on the GPT-2 Simple library by Max Woolf. Before fine-tuning, Twitter data was cleaned, removing links, emojis, and hashtags. This data was then fed into GPT-2 Simple which has its own tokenizer for processing text data. The 355M paramater model was selected as we felt the improved performance as worth the longer training time. The model was trained using Google Colab's NVIDIA processor.<br /> <br />
 
-Analysis of frequency distributions:
-<img src="https://github.com/Stenke/Less-Fake-More-Good-News-Classification/blob/main/Images/real-fake-top-words.png" width="1200" length="2000"/>
+After training for 10,000 steps, we generated 100,000 tweets with a temperature setting of 0.8. We then performed extensive EDA on the real and generated tweets to determine similarities and differences.
 
-Next, Train-Test-Split was employed with a 20% test size. Our dependent variable was the labeled data columm where 1 is Real and 0 is Fake (changed using LabelEncoder). Processed text data was used for explanatory variables with 300,000+ columns. Using Sci-Kit Learn's TF-IDF Vectorizer, trigrams were created and word count limits were tested with best results at 200,000. And now we're ready for modeling...
+Normalized Top Words - Real vs. Generated Tweets:
+<img src="https://github.com/Stenke/Tweets-to-Stories-to-Topics/blob/main/Visuals/word_freq_rvg2.png" width="1200" length="2000"/>
 
-<img src="https://github.com/Stenke/Less-Fake-More-Good-News-Classification/blob/main/Images/tfidf-params.png" width="1200" length="2000"/>
+Following EDA, we decided to use an adhoc classification method of validating performance. The idea is if the classifiers perform at or near 50%, our generated tweets are good replicas of the real things. For the classification modeling, we randomly sampled 15,000 tweets from the real and generated datasets for an entire set of 30,000. We tested both Naive Bayes and Random Forest Classifiers.<br /> <br />
 
-In order to classify our text data, seven classifier models were explored:
-  1. Logistic Regression
-  2. Decision Tree
-  3. Gaussian Naive Bayes
-  4. Random Forest
-  5. Gradient Boosting
-  6. XGBoost
-  7. SVM - Sigmoid & Linear Kernels
-  
-Model performance was evaluted based on various metrics - Accuracy, Precision, Recall, F1-Score, and Average Precision. Additionally, computational speed was considered since the viability of our model in production will depend on how quickly we can run the model. In the case of our business problem, a model to help classify text so that real news rises to the top in a recommender system, Precision seems the most important. Precision in our case means that news that we label as real is truly real (with little false positives). Validating misinformation is dangerous and worse than no information at all (shoutout to Naruto for that notion - watching it with my lil' sis over the holiday).
+We were pleased with a classification accuracy of 62.52% for the random forest classifier after tuning via grid-search. The pre-tuned classifiers overfit the training set performing at or near perfect accuracy. After examiningg the feature importances, we realized this is likely because certain words appear in either the real or generated tweets that don't appear in the other (ex. emptywheel).
 
-A few models were chosen for GridSearchCV based on out-of-box performance. The winners were Logistic Regression, Gradient Boosting, and SVM. XGBoost was toyed with but turns out the model is smarter than my parameter tuning attempts. An example of performing GridSearch can be found below:
+Random Forest Classifier: Feature Importance
+<img src="https://github.com/Stenke/Tweets-to-Stories-to-Topics/blob/main/Visuals/rf-feature-import-plot.png" width="1200" length="2000"/>
 
 <img src="https://github.com/Stenke/Less-Fake-More-Good-News-Classification/blob/main/Images/Gradient-Boost-GridSearch.png" width="2000" length="2200"/>
 
