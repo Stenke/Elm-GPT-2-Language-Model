@@ -42,7 +42,7 @@ Following EDA, we decided to use an adhoc classification method of validating pe
 We were pleased with a classification accuracy of 62.52% for the random forest classifier after tuning via grid-search. The pre-tuned classifiers overfit the training set performing at or near perfect accuracy. After examiningg the feature importances, we realized this is likely because certain words appear in either the real or generated tweets that don't appear in the other (ex. emptywheel).
 
 Random Forest Classifier: Feature Importance
-<br /> <br />
+<br />
 
 <img src="https://github.com/Stenke/Tweets-to-Stories-to-Topics/blob/main/Visuals/rf-feature-import-plot.png" width="600" length="400"/>
 <br /> <br />
