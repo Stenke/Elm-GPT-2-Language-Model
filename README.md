@@ -65,6 +65,8 @@ As mentioned earlier, the classifier performed 12.52% better than random-guessin
 GPT-2 is known to fall into repetitive ruts, which you can see happen by scrolling through the 100,000 tweets. There is still manual work necessary to comb through and select the best ones. To some extent, this could be automated by narrowing down "viable tweets" as those that passed the classification test (were misclassified).
 
 Enjoy some of the examples below!
+<br />
+<img src="https://github.com/Stenke/Elm-GPT-2-Language-Model/blob/main/Visuals/tweet-examples.png" width="1200" length="800"/>
 
 
 ## Conclusion
