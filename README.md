@@ -12,6 +12,11 @@ The digital social community is said to be tailored to you - but it’s filled w
 We understand for most people, a social media exodus is not an option. <br /> <br />
 Enter Elm.<br /> <br />
 
+Elm is an optimistic language model based on your favorite Twitter accounts. For our first test casae, we trained our language model on social contributors who exemplify humor and optimism with a willingness to be vulnerable.<br />
+
+The intention is for you to create a Twitter account to your taste. To personalize your daily dose of goodness, enter your favorite Twitter accounts and topics, and Elm will provide interesting, entertaining, and heart-warming content with your growth in mind.<br />
+
+
 # The Data
 Data was sourced from Twitter using Twint. The accounts were selected for their ecletic humor, inspirational quotes, and emotional intelligence. <br /> <br />
 The following accounts were sourced to fine-tune our GPT-2 language model:
@@ -24,8 +29,7 @@ The following accounts were sourced to fine-tune our GPT-2 language model:
 7. Pourmecoffee
 8. Steve Martin
 <br />
-Twitter Account Contributors:
-<br /> 
+Twitter Account Contributors: <br /> <br />
 <img src="https://github.com/Stenke/Tweets-to-Stories-to-Topics/blob/main/Visuals/account-names-tweet-count.png" width="700" length="500"/>
 
 <br />
