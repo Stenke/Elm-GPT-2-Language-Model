@@ -1,43 +1,36 @@
-# Tweets-to-Stories-to-Topics
-Potential for phase 4 project. First, scape Twitter data from people whose minds' I admire. Then, train GPT-2 on said Tweets using Google Colab. Next, generate short stories from Tweets (280 characters is a bit too short-from for my tastes... we could use a bit more attention). Finally, we'll topic model to explore our stories and prepare to feed as recommended reads. <br /> <br />
+# Elm: Emotional Language Model for Personalized Tweets
+Elm is an optimistic language model based on your favorite Twitter accounts.
+We trained our language model on social contributors who exemplify humor and optimism with a willingness to be vulnerable.
+<br /> <br />
 <p align="center">
   <img src="https://github.com/Stenke/Tweets-to-Stories-to-Topics/blob/main/Visuals/pirate-cat.jpg" width="600"   length="800" />
 </p>
 
 
 # Business Problem
-Misinformation and disinformation is an increasing consideration in the public sphere. For the past 5 years, we've seen governments, news agencies, and social media companies grapple with misleading news and social posts. As we enter 2021, it seems more important than ever to find a consensus on information - what is true and factual. 
-
-Social media is ingrained in societies across the world - billions of people turn to their Facebook groups, Twitter "subject-matter" experts, and other digital social outlets for news that shapes their view on the world. And with the potential virality of one false tweet, misinformation can become "factual" in the eyes of millions; a 21st-century threat that we need to grapple with. 
-
-One common method social media companies have employed is labeling information as "disputed" or "false". Another is to take down information after the fact. Both of these have an adverse effect - those who've had posts labeled or removed are made more sure that their information is true.
-
-I've decided to try another tactic: focus on the good, show less bad. To do so, I've compared various classification models to label text (both social posts and website news stories) as either "Real" or "Fake". The intention is to find a classification model that is both accurate and lightweight enough to be useful in production cases.
-
-Once we have a trained classifier, we can combine it with a recommender system to rank truth and substantive content over false and inflaming. This is a key differentiation with the current norm of the attention commodity which often leads to division and outrage (as these better hold ones attention). The actual recommender system is beyond the scope of this project - we will stick to the first step of identifying the good news so that we can hype up our better angels.
+The digital social community is said to be tailored to you - but it’s filled with hate. Try as we might, we cannot escape the outrage of the attention economy.
+We understand for most people, a social media exodus is not an option. <br /> <br />
+Enter Elm.<br /> <br />
 
 # The Data
-The data was sourced from Kaggle's Source Based Fake News Classification. It contains text and metadata scraped from 244 websites and labeled with the BS Detector Chrome Extension by Daniel Sieradski.
-
-Note: We will be training our classifiers on data labeled by a classification algorithm (pretty meta, I know). In an ideal situation, we would have large datasets hand-labeled by experts.
+Data was sourced from Twitter using Twint. The accounts were selected for their ecletic humor, inspirational quotes, and emotional intelligence. <br /> <br />
+The following accounts were sourced to fine-tune our GPT-2 language model:
+1. Simon Sinek
+2. Brene Brown
+3. Conan O'Brien
+4. Lex Fridman
+5. Tim Siedell
+6. Dalai Lama
+7. Pourmecoffee
+8. Steve Martin
 
 <img src="https://github.com/Stenke/Less-Fake-More-Good-News-Classification/blob/main/Images/pd-data-table-example.png" width="1100" length="1600"/>
 
-<img src="https://github.com/Stenke/Less-Fake-More-Good-News-Classification/blob/main/Images/news-text-example.png" width="12000" length="1800" />
 
-Source: https://www.kaggle.com/ruchi798/source-based-news-classification
-
-# Questions
-The following questions will guide our analysis and modeling as we evaluate performance.
-
-1. How to best use NLP to process text data?
-
-2. What aglorithm(s) will perform best on text data?
-
-3. What aglorithm(s) best balance computational costs and accuracy?
 
 # Methods
-Text data was initially explored with visualizations showing differences in real versus fake text data. Around 50 rows were removed due to NaN values leaving us with 2050 rows of text. Data was then processed through various NLP techniques including stopword removal, tokenization, and vectorization using TF-IDF. There is a class imbalance of 2/3 'fake' to 1/3 'real'. Initially, this imbalance was left as is. Later, SMOTE was explored though without any overall improvements. There was a similar experience with dimensionality reduction using TruncatedSVD. 
+Elm is a languaged model based on the GPT-2 Simple library by Max Woolf. 
+ 
 
 Analysis of frequency distributions:
 <img src="https://github.com/Stenke/Less-Fake-More-Good-News-Classification/blob/main/Images/real-fake-top-words.png" width="1200" length="2000"/>
