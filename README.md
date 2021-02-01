@@ -34,16 +34,20 @@ Elm is a languaged model based on the GPT-2 Simple library by Max Woolf. Before 
 After training for 10,000 steps, we generated 100,000 tweets with a temperature setting of 0.8. We then performed extensive EDA on the real and generated tweets to determine similarities and differences.
 
 Normalized Top Words - Real vs. Generated Tweets:
-<img src="https://github.com/Stenke/Tweets-to-Stories-to-Topics/blob/main/Visuals/word_freq_rvg2.png" width="1200" length="2000"/>
+<br /> <br />
+<img src="https://github.com/Stenke/Tweets-to-Stories-to-Topics/blob/main/Visuals/word_freq_rvg2.png" width="1000" length="700"/>
 
 Following EDA, we decided to use an adhoc classification method of validating performance. The idea is if the classifiers perform at or near 50%, our generated tweets are good replicas of the real things. For the classification modeling, we randomly sampled 15,000 tweets from the real and generated datasets for an entire set of 30,000. We tested both Naive Bayes and Random Forest Classifiers.<br /> <br />
 
 We were pleased with a classification accuracy of 62.52% for the random forest classifier after tuning via grid-search. The pre-tuned classifiers overfit the training set performing at or near perfect accuracy. After examiningg the feature importances, we realized this is likely because certain words appear in either the real or generated tweets that don't appear in the other (ex. emptywheel).
 
-Random Forest Classifier: Feature Importance<br />
+Random Forest Classifier: Feature Importance
+<br /> <br />
+
 <img src="https://github.com/Stenke/Tweets-to-Stories-to-Topics/blob/main/Visuals/rf-feature-import-plot.png" width="600" length="400"/>
-<br />
-We then dove into a comparison of correctly versus misclassified data to understand the differences.<br />
+<br /> <br />
+
+We then dove into a comparison of correctly versus misclassified data to understand the differences.<br /> <br />
 <img src="https://github.com/Stenke/Tweets-to-Stories-to-Topics/blob/main/Visuals/class-vs-misclass-freq-dist.png" width="1400" length="1000"/>
 
 # Findings
