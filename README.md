@@ -24,7 +24,7 @@ The following accounts were sourced to fine-tune our GPT-2 language model:
 7. Pourmecoffee
 8. Steve Martin
 
-<img src="https://github.com/Stenke/Less-Fake-More-Good-News-Classification/blob/main/Images/pd-data-table-example.png" width="1100" length="1600"/>
+<img src="https://github.com/Stenke/Tweets-to-Stories-to-Topics/blob/main/Visuals/account-names-tweet-count.png" width="1100" length="1600"/>
 
 
 
@@ -41,9 +41,10 @@ Following EDA, we decided to use an adhoc classification method of validating pe
 We were pleased with a classification accuracy of 62.52% for the random forest classifier after tuning via grid-search. The pre-tuned classifiers overfit the training set performing at or near perfect accuracy. After examiningg the feature importances, we realized this is likely because certain words appear in either the real or generated tweets that don't appear in the other (ex. emptywheel).
 
 Random Forest Classifier: Feature Importance
-<img src="https://github.com/Stenke/Tweets-to-Stories-to-Topics/blob/main/Visuals/rf-feature-import-plot.png" width="1200" length="2000"/>
+<img src="https://github.com/Stenke/Tweets-to-Stories-to-Topics/blob/main/Visuals/rf-feature-import-plot.png" width="800" length="600"/>
 
-<img src="https://github.com/Stenke/Less-Fake-More-Good-News-Classification/blob/main/Images/Gradient-Boost-GridSearch.png" width="2000" length="2200"/>
+We then dove into a comparison of correctly versus misclassified data to understand the differences.
+<img src="https://github.com/Stenke/Tweets-to-Stories-to-Topics/blob/main/Visuals/class-vs-misclass-freq-dist.png" width="1400" length="1000"/>
 
 # Findings
 A couple models made the final cut and deserve further exploration in the context of a greater system. These include Logistic Regression, for its speed and over-indexing for precision (which could prove to be a boon). The other model was SVM using a sigmoid kernel. This ran at a relatively fast speed, had the highest accuracy, and a better balance between precision and recall.
